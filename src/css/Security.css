@@ -1,0 +1,71 @@
+/* Container with a deep security-themed gradient */
+.security-container {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    padding: 20px;
+}
+
+/* Glass Card with Extra Deep Shadow */
+.glass-security-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+    
+    /* Extra Deep Shadow Effect */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 
+                0 15px 25px -5px rgba(0, 0, 0, 0.5);
+    
+    transition: transform 0.3s ease;
+}
+
+.glass-security-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Input Fields Styling */
+.glass-input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Button Styles */
+.btn-generate {
+    border: 1px solid #ff4b2b;
+    color: #ff4b2b;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-generate:hover {
+    background: #ff4b2b;
+    color: white;
+}
+
+.btn-access {
+    background: #fdbb2d;
+    color: #1a2a6c;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-access:hover:not(:disabled) {
+    background: #e6a927;
+    box-shadow: 0 5px 15px rgba(253, 187, 45, 0.3);
+}

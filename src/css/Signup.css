@@ -1,0 +1,57 @@
+/* Container with a matching medical-themed gradient */
+.signup-container {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    padding: 20px;
+}
+
+/* The Glass Card with Deep Shadow */
+.glass-card-signup {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+    
+    /* Enhanced Deep Shadow */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                0 15px 25px -5px rgba(0, 0, 0, 0.4);
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.glass-card-signup:hover {
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
+}
+
+/* Input Styles */
+.glass-input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Button Style */
+.btn-glass-signup {
+    background: #ffffff;
+    color: #329890;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-glass-signup:hover {
+    background: #e0e0e0;
+    transform: scale(1.02);
+}

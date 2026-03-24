@@ -1,0 +1,87 @@
+/* Container with the consistent medical gradient */
+.add-products-container {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    padding: 40px 20px;
+}
+
+/* Glass Card - matching the Sign In style */
+.glass-product-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+    
+    /* Extra Deep Shadow Effect */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 
+                0 15px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.glass-product-card h3 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+/* Form Controls */
+.glass-input {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    font-family: "Times New Roman", Times, serif;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.glass-input:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+/* File Input specific styling */
+.file-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #a0aec0;
+}
+
+/* Medical Blue Action Button */
+.btn-add-product {
+    background: #ffffff;
+    color: #203a43;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-add-product:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Status Messages */
+.status-msg {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    font-weight: bold;
+}

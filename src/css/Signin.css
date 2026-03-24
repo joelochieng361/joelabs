@@ -1,0 +1,75 @@
+/* Container with a medical-themed gradient background to show off the glass effect */
+.signin-container {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* The Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Stronger frosted glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+    
+    /* Extra Deep Shadow Effect */
+    /* Layer 1: The soft deep ambient shadow | Layer 2: The darker core shadow */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                0 15px 25px -5px rgba(0, 0, 0, 0.4);
+    
+    transition: all 0.3s ease-in-out;
+}
+
+/* Optional hover to increase depth */
+.glass-card:hover {
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Input Styles */
+.glass-input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    font-family: "Times New Roman", Times, serif;
+    padding: 12px;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-input:focus {
+    background: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+/* Labels */
+.form-label {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Glass Button */
+.btn-glass {
+    background: #ffffff;
+    color: #267f87;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-glass:hover {
+    background: #e0e0e0;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
