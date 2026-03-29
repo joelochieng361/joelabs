@@ -18,13 +18,16 @@ const Signin = () => {
             formdata.append("email", email);
             formdata.append("password", password);
 
-            const response = await axios.post("https://kbenkamotho.alwaysdata.net/api/signin", formdata);
+            const response = await axios.post("https://modcom2026a.alwaysdata.net/api/signin", formdata);
             setLoading("");
 
-            if (response.data.user) {
-                localStorage.setItem("user", JSON.stringify(response.data.user));
-                navigate("/");
-            } else {
+                    // Inside handlesubmit in Signin.js
+        if (response.data.user) {
+            localStorage.setItem("user", JSON.stringify(response.data.user));
+            // Using window.location.href instead of navigate("/") forces a 
+            // reload of App.js to pick up the new localStorage data for the Navbar
+            window.location.href = "/"; 
+        }else {
                 setError("Invalid credentials.");
             }
         } catch (err) {
