@@ -43,9 +43,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path='/' element={<Getproducts />} />
+          <Route path='/getproducts' element={<Getproducts />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/signin' element={<Signin />} />
+          <Route path='/' element={<Signin />} />
           <Route path='/makepayment' element={<Makepayment /> } />
           <Route path='*' element={<Notfound />} />
 
