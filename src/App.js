@@ -23,7 +23,7 @@ function App() {
         
         <nav className="p-3 bg-dark d-flex align-items-center gap-3">
           <b className='text-light'>JOELABS LTD</b>
-          <Link to={"/"} className="btn btn-outline-success">Home</Link> 
+          <Link to={"/home"} className="btn btn-outline-success">Home</Link> 
           
           {!user && <Link to={"/signup"} className="btn btn-outline-success">Signup</Link>}
           {!user && <Link to={"/signin"} className="btn btn-outline-success">Signin</Link>}
@@ -43,9 +43,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path='/getproducts' element={<Getproducts />} />
+          <Route path='/home' element={<Getproducts />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/' element={<Signin />} />
+          <Route path='/signin' element={<Signin />} />
           <Route path='/makepayment' element={<Makepayment /> } />
           <Route path='*' element={<Notfound />} />
 
