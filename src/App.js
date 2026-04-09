@@ -11,7 +11,8 @@ import Security from './components/Security';
 
 function App() {
   // Retrieve user from localStorage
-  const user = JSON.parse(localStorage.getItem("user"));
+  const userString = localStorage.getItem("user");
+  const user = userString ? JSON.parse(userString) : null;
   const isAdmin = user && user.role === "admin";
 
   return (
@@ -23,41 +24,52 @@ function App() {
         
         <nav className="p-3 bg-dark d-flex align-items-center gap-3">
           <b className='text-light'>JOELABS LTD</b>
-          <Link to={"/home"} className="btn btn-outline-success">Home</Link> 
           
-          {!user && <Link to={"/signup"} className="btn btn-outline-success">Signup</Link>}
-          {!user && <Link to={"/signin"} className="btn btn-outline-success">Signin</Link>}
+          {/* Home Link: Only visible if logged in */}
+          {user && <Link to="/home" className="btn btn-outline-success">Home</Link>}
           
-          {/* Only show Add Product link if the user is an admin */}
+          {/* Signin Link: Only visible if NOT logged in */}
+          {!user && <Link to="/" className="btn btn-outline-success">Signin</Link>}
+          
+          {/* Admin Links */}
           {isAdmin && (
-            <Link to={"/security"} className='btn btn-outline-success'>add products</Link>
+            <>
+              <Link to="/addproducts" className='btn btn-outline-success'>Add Products</Link>
+              <Link to="/security" className='btn btn-outline-success'>Security</Link>
+            </>
           )}
 
           {user && (
             <button 
               className="btn btn-outline-danger ms-auto" 
-              onClick={() => { localStorage.clear(); window.location.href = "/signin"; }}>
+              onClick={() => { 
+                localStorage.removeItem("user"); // Clear only user data
+                window.location.href = "/"; 
+              }}>
               Logout
             </button>
           )}
         </nav>
 
         <Routes>
+          {/* Root path is the Signin page */}
+          <Route path='/' element={user ? <Navigate to="/home" /> : <Signin />} />
+          
           <Route path='/home' element={<Getproducts />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/signin' element={<Signin />} />
           <Route path='/makepayment' element={<Makepayment /> } />
-          <Route path='*' element={<Notfound />} />
 
-          {/* Protected Routes: If not admin, redirect to Home */}
+          {/* Protected Routes */}
           <Route 
             path='/security' 
-            element={isAdmin ? <Security /> : <Navigate to="/" />} 
+            element={isAdmin ? <Security /> : <Navigate to="/home" />} 
           />
           <Route 
             path='/addproducts' 
-            element={isAdmin ? <Addproducts /> : <Navigate to="/" />} 
+            element={isAdmin ? <Addproducts /> : <Navigate to="/home" />} 
           />
+          
+          <Route path='*' element={<Notfound />} />
         </Routes>
       </div>
     </Router>

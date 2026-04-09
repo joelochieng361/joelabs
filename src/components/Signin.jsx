@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import '../css/Signin.css';
 
 const Signin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState(false); // Changed to Boolean
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    
+    const navigate = useNavigate(); 
 
     const handlesubmit = async (e) => {
         e.preventDefault();
@@ -23,20 +25,21 @@ const Signin = () => {
             
             setLoading(false);
 
-            if (response.data && response.data.user) {
-                // Store user object as a string in localStorage
+            // Check if the server returned a valid user object
+            if (response.data && (response.data.user || response.data.status === "success")) {
+                
+                // 1. Save user object (containing role, email, etc) to localStorage
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 
-                // Forces a full page reload to the Home page.
-                // This ensures App.js/Navbar picks up the new 'user' data.
-                window.location.href = "/"; 
+                // 2. Redirect to the Home page
+                // We use window.location.href so App.js re-renders and detects the 'user' in storage
+                window.location.href = "/home"; 
+                
             } else {
-                // If API returns success: false or similar
                 setError(response.data.message || "Invalid credentials.");
             }
         } catch (err) {
             setLoading(false);
-            // Check if the backend sent a specific error message
             const serverMessage = err.response?.data?.message || "Connection to server failed.";
             setError(serverMessage);
         }
@@ -47,14 +50,14 @@ const Signin = () => {
             <div className="col-11 col-sm-8 col-md-6 col-lg-4 glass-card p-5 shadow-lg">
                 <h1 className="text-center mb-4 text-white">Sign In</h1>
                 
-                {loading && <p className="text-info text-center animate-pulse">Authenticating...</p>}
+                {loading && <p className="text-info text-center">Authenticating...</p>}
                 {error && (
                     <div className="alert alert-danger bg-danger bg-opacity-25 border-0 text-white text-center py-2">
                         {error}
                     </div>
                 )}
 
-                <form onSubmit={handlesubmit}>
+                <form onSubmit={handlesubmit} className="mt-4 d-flex flex-column gap-3">
                     <div className="mb-3">
                         <label className="form-label text-white opacity-75">Email Address</label>
                         <input 
