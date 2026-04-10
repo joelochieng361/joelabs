@@ -10,7 +10,6 @@ const Signin = () => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    const allocate = useNavigate(); 
 
 
     const handlesubmit = async (e) => {
