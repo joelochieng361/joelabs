@@ -9,7 +9,7 @@ const Signin = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
 
     const handlesubmit = async (e) => {
         e.preventDefault();
@@ -25,16 +25,16 @@ const Signin = () => {
             
             setLoading(false);
 
-            // Check if the server returned a valid user object
-            if (response.data && (response.data.user || response.data.status === "success")) {
+            // Logic to handle the successful login
+            if (response.data && response.data.user) {
                 
-                // 1. Save user object (containing role, email, etc) to localStorage
+                // 1. Save the user object to localStorage
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 
-                // 2. Redirect to the Home page
-                // We use window.location.href so App.js re-renders and detects the 'user' in storage
+                // 2. Redirect to /home using window.location.href
+                // This forces App.js to reload and show the "Logout" button immediately
                 window.location.href = "/home"; 
-                
+
             } else {
                 setError(response.data.message || "Invalid credentials.");
             }
