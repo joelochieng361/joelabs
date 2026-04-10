@@ -3,13 +3,15 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../css/Signin.css';
 
+
+
 const Signin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    
-    const navigate = useNavigate(); 
+    const allocate = useNavigate(); 
+
 
     const handlesubmit = async (e) => {
         e.preventDefault();
