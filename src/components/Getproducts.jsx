@@ -65,6 +65,22 @@ const Getproducts = () => {
         fetchProduct();
     }, []);
 
+    //below is the search functionality
+    const handleSearch = async (query) => {
+        setLoading(true);
+        try {
+            const response = await axios.get(`https://modcom2026a.alwaysdata.net/api/search_products?query=${encodeURIComponent(query)}`);
+            setProducts(response.data);
+            //delaying the loading state to show the loader for a better user experience
+            setTimeout(() => setLoading(false), 3000);
+        } catch (error) {
+            setError("Search failed: " + error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
     return (
         <div className='store-container'>
             {/* --- SECTION 1: HERO CAROUSEL (Updated Controls) --- */}
@@ -104,6 +120,16 @@ const Getproducts = () => {
                 {error && <h4 className="text-danger text-center">{error}</h4>}
 
                 <div className='row justify-content-center'>
+                    <search className="mb-4 d-flex justify-content-center">
+                        <input 
+                            type="text"
+                            className="form-control w-50 glass-input"
+                            placeholder="Search products..."
+                            onChange={(e) => { handleSearch(e.target.value); }}
+                        />
+                    </search>
+
+
                     {products.map((product, index) => (
                         <div className="col-md-4 col-lg-3 mb-4" key={product.id || index}>
                             <div className="card glass-card h-100 border-0">
@@ -139,14 +165,17 @@ const Getproducts = () => {
                         <p className='text-light'>
                             Precision diagnostics for cardiac care. Features high-res interface and instant data sync.
                         </p>
-                        <button className="btn btn-info mt-3 fw-bold">View Technical Specs</button>
+                        <button className="btn btn-info mt-3 fw-bold"
+                        onClick={() => navigate("/technical-specs")}>
+                            View Technical Specs
+                        </button>
                     </div>
                     <div className="col-md-6 text-center">
                          <div className="medical-icon-box display-1">🏥</div>
                     </div>
                 </div>
 
-                {/* --- SECTION 4: CONTACT FORM (Fixed Inputs) --- */}
+                {/* --- SECTION 4: CONTACT FORM --- */}
                 <div className="row mt-5 mb-5 p-4 glass-card align-items-stretch mx-1">
                     <div className="col-md-5 p-4 border-end border-secondary border-opacity-25">
                         <h2 className="text-info mb-4">Contact Specialists</h2>
@@ -156,7 +185,11 @@ const Getproducts = () => {
                         </div>
                         <div className="contact-detail mb-3">
                             <span className="text-info fw-bold">✉️ Email:</span>
-                            <p className="small text-light">support@joelabs.co.ke</p>
+                            <p className="small text-light">joelabs@gmail.com</p>
+                        </div>
+                        <div className="contact-details mb-3">
+                            <span className="text-info fw-bold">📞 Phone:</span>
+                            <p className="small text-light">+254 769411754</p>
                         </div>
                     </div>
 
@@ -194,7 +227,9 @@ const Getproducts = () => {
                                     required
                                 ></textarea>
                             </div>
-                            <button type="submit" className="btn btn-info w-100 fw-bold py-2" disabled={loading}>
+                            <button type="submit"
+                            className="btn btn-info w-100 fw-bold py-2"
+                            disabled={loading}>
                                 {loading ? "Processing..." : "Send Inquiry"}
                             </button>
                         </form>

@@ -34,8 +34,7 @@ function App() {
           {/* Admin Links */}
           {isAdmin && (
             <>
-              <Link to="/addproducts" className='btn btn-outline-success'>Add Products</Link>
-              <Link to="/security" className='btn btn-outline-success'>Security</Link>
+              <Link to="/security" className='btn btn-outline-success'>Add products</Link>
             </>
           )}
 
