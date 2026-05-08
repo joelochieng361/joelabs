@@ -80,7 +80,6 @@ const Getproducts = () => {
         }
     };
 
-
     return (
         <div className='store-container'>
             {/* --- SECTION 1: HERO CAROUSEL (Updated Controls) --- */}
@@ -109,6 +108,50 @@ const Getproducts = () => {
             </div>
 
             <div className="container">
+                <div className='text-center mb-5'>
+                    <h1>What do we do</h1>
+
+                    <p className='text-center'>We provide high-quality medical equipment and supplies for modern healthcare facilities.</p>
+
+                    <div className='col-md-12'>
+                        <div className='row justify-content-center'>
+                            <div className='card card-shadow col-md-3 m-3'>
+                                <img src="./images/AD1.avif" alt="Image 1" />
+                                <b>Neurosurgery / ENT</b>
+                            </div>
+
+                            <div className='card card-shadow col-md-3 m-3'>
+                                <img src="./images/AD1.avif" alt="Image 1" />
+                                <b>Cardiology</b>
+                            </div>
+
+                            <div className='card card-shadow col-md-3 m-3'>
+                                <img src="./images/AD1.avif" alt="Image 1" />
+                                <b>Orthopedics</b>
+                            </div>
+
+                        </div>
+
+                        <br /> <br />
+
+                    </div>
+                </div>
+
+                <div className='row col-md-12 justify-content-center'>
+                    <div className='text-center'><h2>Customer Stories</h2></div>
+                    <div className='col-md-2 justify-content-center'>
+                        <img src="./images/AD0.avif" alt="Image 2" />
+                        
+                    </div>
+                    <div>
+                        <br />
+                        <p>
+"I am using the Perneczky Aneurysm Clip 2™ for aneurysm surgery. The Perneczky Aneurysm Clip 2™ comes with a unique design where the clip instrument grasps the clip on the inside which goes in line with significant advantages compared to other Aneurysm Clips in the market. The second generation (Perneczky Aneurysm Clip 2™) was further improved, especially in regards to opening width and size. (Prof. Dr. Siamak Asgari, Director Neurosurgical Department, Klinikum Ingolstadt, Germany)"</p>
+                    <b>John Doe, Neurosurgeon</b>
+                    </div>
+
+                </div>
+
                 {/* --- SECTION 2: PRODUCT CATALOGUE --- */}
                 <div className="text-center mb-5">
                     <h2 className="section-title text-info">Medical Equipment Store</h2>

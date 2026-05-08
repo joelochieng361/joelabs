@@ -1,0 +1,83 @@
+/* Medical Theme Overrides */
+:root {
+    --med-blue: #0056b3;
+    --med-light-blue: #e7f1ff;
+    --med-green: #198754;
+    --text-dark: #2c3e50;
+    --border-color: #dee2e6;
+}
+
+.medical-theme {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-dark);
+    background-color: #ffffff;
+}
+
+#Hugo {
+    color: var(--med-blue);
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Hero Section Branding */
+.hero-section {
+    background: radial-gradient(circle at top right, #f0f7ff, #ffffff);
+}
+
+.bg-soft-primary {
+    background-color: var(--med-light-blue);
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Custom Cards */
+.selection-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.selection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 86, 179, 0.08);
+    border-color: var(--med-blue);
+}
+
+/* Icon Styling */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background-color: var(--med-light-blue);
+    color: var(--med-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.icon-wrapper.secondary {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--med-blue);
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+}
+
+/* Footer & Dividers */
+.footer {
+    border-top: 1px solid var(--border-color);
+}

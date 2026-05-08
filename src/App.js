@@ -8,6 +8,7 @@ import Notfound from './components/Notfound';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Makepayment from './components/Makepayment';
 import Security from './components/Security';
+import Zyke from './components/Zyke';
 
 function App() {
   // Retrieve user from localStorage
@@ -57,6 +58,7 @@ function App() {
           <Route path='/home' element={<Getproducts />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/makepayment' element={<Makepayment /> } />
+          <Route path='/zyke' element={<Zyke />} />
 
           {/* Protected Routes */}
           <Route 
@@ -67,7 +69,6 @@ function App() {
             path='/addproducts' 
             element={isAdmin ? <Addproducts /> : <Navigate to="/home" />} 
           />
-          
           <Route path='*' element={<Notfound />} />
         </Routes>
       </div>
