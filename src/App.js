@@ -47,10 +47,10 @@ function App() {
             {/* Admin Links */}
             {isAdmin && (
               <>
-                <Link to="/security" className='btn btn-outline-warning text-dark fw-bold'>
+                <Link to="/security" className='btn btn-outline-warning text-info fw-bold'>
                   Admin: Add Products
                 </Link>
-                <Link to="/approveproducts" className='btn btn-outline-warning text-dark fw-bold'>
+                <Link to="/approveproducts" className='btn btn-outline-warning text-info fw-bold'>
                   Admin: Approve Requests
                 </Link>
               </>

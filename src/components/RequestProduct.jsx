@@ -29,7 +29,7 @@ const RequestProduct = () => {
             formData.append("product_name", productName);
             formData.append("product_description", description);
             formData.append("product_cost", amount);
-            formData.append("product_photo", photo);
+            formData.append("product_photos", photo);
 
             // Replace with your actual endpoint for user requests
             const response = await axios.post("https://modcom2026a.alwaysdata.net/api/request_product", formData, {
