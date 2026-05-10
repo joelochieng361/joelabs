@@ -93,6 +93,15 @@ const Addproducts = () => {
             disabled={loading} />
         </form>
       </div>
+      <footer className="footer py-5 bg-white">
+        <div className="container text-center">
+          <p className="fw-bold text-primary mb-2">JOELABS LTD.</p>
+          <p className="text-muted small mb-0">
+            Headquarters: Science Park, Medical Drive, Suite 402<br />
+            © {new Date().getFullYear()} Joelabs Medical Solutions. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }

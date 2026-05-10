@@ -34,7 +34,7 @@ const Signin = () => {
                 
                 // 2. Redirect to /home using window.location.href
                 // This forces App.js to reload and show the "Logout" button immediately
-                window.location.href = "/home"; 
+                window.location.href = "/zyke"; 
 
             } else {
                 setError(response.data.message || "Invalid credentials.");

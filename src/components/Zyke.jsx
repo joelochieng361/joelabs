@@ -15,8 +15,8 @@ const Zyke = () => {
             <i className="bi bi-shield-plus me-2"></i>JOELABS LTD.
           </span>
           <div className="d-flex gap-3">
-            <button className="btn btn-sm btn-primary">Support 🫴</button>
-            <button className="btn btn-sm btn-primary">My Account 💲</button>
+            <button className="btn btn-sm btn-primary" onClick={() => navigate('/contact')}>Support 🫴</button>
+            <button className="btn btn-sm btn-primary" onClick={() => navigate('/store')}>My Account 💲</button>
           </div>
         </div>
       </nav>
@@ -38,12 +38,12 @@ const Zyke = () => {
           <div className="col-md-5">
             <div className="selection-card p-5 text-center h-100">
               <div className="icon-wrapper mb-4">
-                <i className="bi bi-microscope"></i>
+                <i className="bi bi-microscope">🏦</i>
               </div>
               <h3>Procurement Portal</h3>
               <p className="text-muted">Browse our verified catalog of clinical diagnostics and lab reagents.</p>
               <button className="btn btn-primary btn-lg w-100 mt-3"
-              onClick={(e) => navigate('/home')}
+              onClick={(e) => navigate('/store')}
               >Buy Medical Supplies</button>
             </div>
           </div>
@@ -52,12 +52,12 @@ const Zyke = () => {
           <div className="col-md-5">
             <div className="selection-card p-5 text-center h-100">
               <div className="icon-wrapper mb-4 secondary">
-                <i className="bi bi-box-seam"></i>
+                <i className="bi bi-box-seam">🪙</i>
               </div>
               <h3>Vendor Gateway</h3>
               <p className="text-muted">Distribute your medical innovations to our network of healthcare facilities.</p>
               <button className="btn btn-outline-primary btn-lg w-100 mt-3"
-                onClick={(e) => navigate('/security')}>
+                onClick={(e) => navigate('/requestproduct')}>
                 Start Selling
               </button>
             </div>
