@@ -1,10 +1,11 @@
 import React from 'react';
 import '../css/Zyke.css';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Zyke = () => {
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+
 
   return (
     <div className="medical-theme">
